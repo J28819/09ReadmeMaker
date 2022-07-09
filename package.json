@@ -1,0 +1,23 @@
+{
+  "name": "09readmemaker",
+  "version": "1.0.0",
+  "description": "Read me maker project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J28819/09ReadmeMaker.git"
+  },
+  "keywords": [
+    "ReadMe",
+    "Maker"
+  ],
+  "author": "J28819",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/J28819/09ReadmeMaker/issues"
+  },
+  "homepage": "https://github.com/J28819/09ReadmeMaker#readme"
+}
