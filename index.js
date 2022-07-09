@@ -1,7 +1,10 @@
 
 
+// include inquirer module
 const inquirer = require('inquirer');
-import chalk from 'chalk';
+ // include node fs module
+ var fs = require('fs');
+ 
 
 console.log( '---------------------------------------------------------\n');
  console.log('\x1b[36m%s\x1b[0m', 'Hi, welcome to Pro Readme Gen v1.0.0 by Ismael Leal   |\n');
@@ -36,20 +39,12 @@ console.log( '---------------------------------------------------------\n');
    {
      type: 'input',
      name: 'TableofContents',
-     message: "\033[0;31m\Table of contents --  Add a list of contents please separate each one by comma.",
-     validate(value) {
-       const pass = value;
-       var list = (pass.split(','))
-       if (list.length >= 5) {
-         return true;
-       }
-       return "\033[0;31m\ "+`Add another line Actual Number of Line Detected: ${list.length}`;
-     },
+     message: "\033[0;32m\Table of contents --  Adding table of contents \033[0;31m\press enter",
    },
    {
     type: 'input',
     name: 'Installation',
-    message: "\033[0;31m\Installation --  Add a procedure to install your application please separate each one by comma. minimum 5 lines.",
+    message: "\033[0;32m\Installation --  Add a procedure to install your application please separate each one by comma. minimum 5 lines.",
     validate(value) {
       const pass = value;
       var list = (pass.split(','))
@@ -61,8 +56,8 @@ console.log( '---------------------------------------------------------\n');
   },
    {
     type: 'input',
-    name: 'Screenshots',
-    message: "\033[0;31m\Screenshoots --  Add the screenshoots paths for your application please separate each one by comma.\n minimum 3 screenshoots.  Using the relative filepath, add it to your README using the following syntax: [./img/example.png]",
+    name: 'Usage',
+    message: "\033[0;32m\Usage --  Add a list about how to usage this application, please separate each one by comma. minimum 3 rows.",
     validate(value) {
       const pass = value;
       var list = (pass.split(','))
@@ -75,66 +70,65 @@ console.log( '---------------------------------------------------------\n');
    {
     type: 'input',
     name: 'Credits',
-    message: "Credits Add a list of your collaborators, if any with links to their GitHub Profiles",
+    message: '\033[0;32m\Credits --  Credits Add a list of your collaborators, if any with links to their GitHub Profiles',
   },
   {
     type: 'list',
     name: 'License',
-    message: '',
+    message: '\033[0;32m\Chose one license type from the list',
     choices: ["None", "Apache License 2.0", "GNU General Public License v3.0", "MIT License", "BSD 2-Clause 'Simplified' License",
   'BSD 3-Clause "New" or "Revised" License', 'Boost Software License 1.0',  'Creative Commons Zero v1.0 Universal',
   'Eclipse Public License 2.0', 'GNU Affero General Public License v3.0', 'GNU General Public License v2.0', 'GNU Lesser General Public License v2.1'  ],
-   answerlines: 1,
-   
   },
-  {
-   type: 'input',
-   name: 'Features',
-   message: "If your project has a lot of features, list them here. Add minimum 3 of them\n",
-   validate(value) {
-     const pass = value;
-     var list = (pass.split(','))
-     if (list.length >= 3) {
-       return true;
-     }
-     return "\033[0;31m\ "+`is really important to make your README file looks professional as possible\n please add minimum 3 Features  for your app`;
-   },
- },
  {
   type: 'input',
   name: 'Contribute',
-  message: "If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you`d prefer.\n",
-  validate(value) {
-    const pass = value;
-    var list = (pass.split(','))
-    if (list.length >= 3) {
-      return true;
-    }
-    return "\033[0;31m\ "+`Please add more than 1 guide lines from your app`;
-  },
+  message: '\033[0;32m\Contribute --  If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so.',
+
 },
-,
 {
   type: 'input',
-  name: 'Test',
-  message: 'Go the extra mile and write tests for your application. Then provide examples on how to run them here. \n',
+  name: 'Tests',
+  message: '\033[0;32m\Tests --  Go the extra mile and write tests for your application. Then provide examples on how to run them here. \n',
+  choices: [],
+},
+{
+  type: 'input',
+  name: 'Questions',
+  message: '\033[0;32m\Questions --  Please any questions please add your GitHub name here: \n',
   choices: [],
 }
  ];
  
  inquirer.prompt(questions).then((answers) => {
+    let License = `# License \n [${answers.License}](https://github.com/nvm-sh/nvm#important-notes)`;
+    let Title = `# ${answers.Title}  [![License](https://img.shields.io/badge/${License}%202.0-blue.svg)](https://opensource.org/licenses/${License}`;
+    let Description = `## Description \n ${answers.Description}`;
 
-    let Title = `${answers.Title}`;
-    let Description = `${answers.Description}`;
-    let TableofContents = `${answers.TableofContents}`;
-    let Installation = `${answers.Installation}`;
-    let ScreenShots = `${answers.ScreenShots}`;
-    let Credits = `${answers.Credits}`;
-    let License = `${answers.License}`;
-    let Features = `${answers.Features}`;
+    let TableofContentsformated = `- [Description](#Description)\n  - [TableofContents](#TableofContents)\n - [Installation](#Installation)\n - [Usage](#Usage)\n - [License](#Licens)\n - [Contributing](#Contributing)\n - [Tests](#Test)\n - [Questions](#Questions)`
+    let TableofContents = ` ## Table of Contents\n ${TableofContentsformated}`;
+
+    let Installation = "## Installation\n ```sh" + ` ${answers.Installation} ` + " | bash  ```";
+
+    let Usage = `## Usagen ${answers.Usage}`;
+    let Credits = `## Credits\n ${answers.Credits}`;
+    
+   
     let Contribute = `${answers.Contribute}`;
     let Tests = `${answers.Tests}`;
-    
-   console.log('\nOrder receipt:');
-   console.log(JSON.stringify(answers, null, '  '));
+    let Questions = `## Questions\n [${answers.Questions}](https://gist.github.com/${answers.Questions})`;
+
+    var readmetext = `${Title}\n${Description}\n${TableofContents}\n${Installation}\n${Usage}\n ${Usage}\n ${Credits}\n${License}\n## Badges\n![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)\n ## Contribute ${Contribute}\n## Tests\n ${Tests} \n## Questions\n${Questions}`
+    console.log(readmetext)
+
+  
+    // writeFile function with filename, content and callback function
+    fs.writeFile('README.md', readmetext, function (err) {
+        if (err) throw err;
+        console.log('File is created successfully.');
+      });
+
  });
+
+
+
