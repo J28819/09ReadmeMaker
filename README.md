@@ -1,5 +1,5 @@
 # 09ReadmeMaker
-[![License](https://img.shields.io/badge/Apache License 2.0-blue.svg)](https://opensource.org/licenses/Apache License 2.0
+[![License](https://img.shields.io/badge/License-GNU General Public License v3.0-yellow)](https://opensource.org/licenses/GNU General Public License v3.0
 ## Description 
  This Application generate README.md Files with a Template and formatting the data added from the console
  ## Table of Contents
@@ -30,13 +30,13 @@
  ## Credits
  Ismael Leal
 # License 
- [![License](https://img.shields.io/badge/Apache License 2.0--Clause-orange.svg)](https://opensource.org/licenses/Apache License 2.0)
+ [![License](https://img.shields.io/badge/License-GNU General Public License v3.0-yellow)](https://opensource.org/licenses/GNU General Public License v3.0)
 ## Badges
 ![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
- [![License](https://img.shields.io/badge/Apache License 2.0-blue.svg)](https://opensource.org/licenses/undefined
- ## Contribute no
+ [![License](https://img.shields.io/badge/GNU General Public License v3.0-blue.svg)](https://opensource.org/licenses/undefined
+ ## Contribute 
 ## Tests
- JEST 
+  
 ## Questions
- Follow this links and ask your questions to the Author: [J28819](https://gist.github.com/J28819)
- Or send an email to: lelj28819@gmail.com
+ Follow this links and ask your questions to the Author: [](https://gist.github.com/)
+ Or send an email to: 
