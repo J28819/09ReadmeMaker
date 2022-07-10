@@ -89,36 +89,47 @@ console.log( '---------------------------------------------------------\n');
 {
   type: 'input',
   name: 'Tests',
-  message: '\033[0;32m\Tests --  Go the extra mile and write tests for your application. Then provide examples on how to run them here. \n',
+  message: '\033[0;32m\Tests --  Go the extra mile and write tests for your application. Then provide examples on how to run them here. ',
   choices: [],
 },
 {
   type: 'input',
   name: 'Questions',
-  message: '\033[0;32m\Questions --  Please any questions please add your GitHub name here: \n',
+  message: '\033[0;32m\Questions --  Please any questions please add your GitHub name here: ',
+  choices: [],
+},
+{
+  type: 'input',
+  name: 'email',
+  message: '\033[0;32m\Email--  Please add your email to end users can contact you ',
   choices: [],
 }
  ];
  
  inquirer.prompt(questions).then((answers) => {
     let License = `# License \n [${answers.License}](https://github.com/nvm-sh/nvm#important-notes)`;
-    let Title = `# ${answers.Title}  [![License](https://img.shields.io/badge/${License}%202.0-blue.svg)](https://opensource.org/licenses/${License}`;
+    let Title = `# ${answers.Title}\n`+ "[![License](https://img.shields.io/badge/${License}%202.0-blue.svg)](https://opensource.org/licenses/${License}";
     let Description = `## Description \n ${answers.Description}`;
 
     let TableofContentsformated = `- [Description](#Description)\n  - [TableofContents](#TableofContents)\n - [Installation](#Installation)\n - [Usage](#Usage)\n - [License](#Licens)\n - [Contributing](#Contributing)\n - [Tests](#Test)\n - [Questions](#Questions)`
     let TableofContents = ` ## Table of Contents\n ${TableofContentsformated}`;
+    let InstallationIns = (answers.Installation).split(',')
+    
+    installationins.forEach(element => {
+      console.log(element)
+    });
+    let Installation = "## Installation\n ```sh" + ` ${InstallationIns} ` + " | bash  ```";
 
-    let Installation = "## Installation\n ```sh" + ` ${answers.Installation} ` + " | bash  ```";
-
-    let Usage = `## Usagen ${answers.Usage}`;
+    let Usage = `## Usage ${answers.Usage}`;
     let Credits = `## Credits\n ${answers.Credits}`;
     
+    let badges = "[![License](https://img.shields.io/badge/${License}%202.0-blue.svg)](https://opensource.org/licenses/${License}"
    
     let Contribute = `${answers.Contribute}`;
     let Tests = `${answers.Tests}`;
-    let Questions = `## Questions\n [${answers.Questions}](https://gist.github.com/${answers.Questions})`;
-
-    var readmetext = `${Title}\n${Description}\n${TableofContents}\n${Installation}\n${Usage}\n ${Usage}\n ${Credits}\n${License}\n## Badges\n![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)\n ## Contribute ${Contribute}\n## Tests\n ${Tests} \n## Questions\n${Questions}`
+    let Questions = `## Questions\n Follow this links and ask your questions to the Author: [${answers.Questions}](https://gist.github.com/${answers.Questions})\n Or send an email to: ${answers.email}`;
+    
+    var readmetext = `${Title}\n${Description}\n${TableofContents}\n${Installation}\n ${Usage}\n ${Credits}\n${License}\n## Badges\n![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)\n ${badges}\n ## Contribute ${Contribute}\n## Tests\n ${Tests} \n${Questions}`
     console.log(readmetext)
 
   

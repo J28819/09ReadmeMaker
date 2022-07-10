@@ -22,6 +22,10 @@
   "homepage": "https://github.com/J28819/09ReadmeMaker#readme",
   "dependencies": {
     "chalk": "^5.0.1",
-    "inquirer": "^6.5.0"
+    "inquirer": "^6.5.0",
+    "jets": "^0.14.1"
+  },
+  "devDependencies": {
+    "jest": "^28.1.2"
   }
 }
