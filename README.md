@@ -1,5 +1,5 @@
 # 09ReadmeMaker
-![License](https://img.shields.io/github/license/J28819/09ReadmeMaker)
+[![License](https://img.shields.io/github/license/J28819/09ReadmeMaker)](https://opensource.org/licenses)
 
 ## Description 
  This Application generate README.md Files with a Template and formatting the data added from the console
@@ -15,7 +15,7 @@
 ## Installation
  ```sh
 - git clone
--  cd /.09ReadmeMaker
+- cd /.09ReadmeMaker
 -  npm init
 -  node index.js
 -  follow command instructions
@@ -25,7 +25,7 @@
  ```sh
 - Open Terminal
 -  node index.js
--  Follow Command line Instructions
+-  Follow the Command Line Instructions
 
  ``` 
  ## Credits
@@ -37,7 +37,7 @@ MIT License
 ![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
  ![License](https://img.shields.io/github/license/J28819/09ReadmeMaker)(https://opensource.org/licenses)
 
- ## Contribute No
+ ## Contribute No Contributions
 ## Tests
  JEST 
 ## Questions
