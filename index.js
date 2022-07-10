@@ -108,7 +108,7 @@ console.log( '---------------------------------------------------------\n');
  
  inquirer.prompt(questions).then((answers) => {
     let License = `# License \n [![License](https://img.shields.io/badge/License-${answers.License}-yellow)](https://opensource.org/licenses/${answers.License})`;
-    let Title = `# ${answers.Title}\n`+ `[![License](https://img.shields.io/badge/License-${answers.License}-yellow)](https://opensource.org/licenses/${answers.License}`;
+    let Title = `# ${answers.Title}\n`+ `![License](https://img.shields.io/badge/License-${answers.License}-yellow)`;
     let Description = `## Description \n ${answers.Description}`;
 
     let TableofContentsformated = `- [Description](#Description)\n  - [TableofContents](#TableofContents)\n - [Installation](#Installation)\n - [Usage](#Usage)\n - [License](#Licens)\n - [Contributing](#Contributing)\n - [Tests](#Test)\n - [Questions](#Questions)`
