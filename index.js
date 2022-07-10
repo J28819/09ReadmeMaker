@@ -95,7 +95,7 @@ console.log( '---------------------------------------------------------\n');
 {
   type: 'input',
   name: 'Questions',
-  message: '\033[0;32m\Questions --  Please any questions please add your GitHub name here: ',
+  message: '\033[0;32m\Questions --  For questions please add your GitHub User/Application name here exmaple J28819/09ReadmeMaker: ',
   choices: [],
 },
 {
@@ -105,13 +105,14 @@ console.log( '---------------------------------------------------------\n');
   choices: [],
 }
  ];
- 
+ //https://img.shields.io/github/license/J28819/06WheaterApp
+ //https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FJ28819%2F09ReadmeMaker
+ //https://img.shields.io/github/issues/J28819/09ReadmeMaker
+
  inquirer.prompt(questions).then((answers) => {
     let leanLicense = (answers.License).replace(' ', '%')
-    let License = `# License \n [![License](https://img.shields.io/badge/License-${leanLicense}-yellow)](https://opensource.org/licenses/${leanLicense})`;
-   
-    
-    let Title = `# ${answers.Title}\n`+ `![License](https://img.shields.io/badge/License-${leanLicense}-yellow)\n` + ` [badmath](https://img.shields.io/github/languages/top/lernantino/badmath)\n`;
+    let License = `# License \n [![License](https://img.shields.io/badge/License-${leanLicense}-yellow)](https://opensource.org/licenses)`;
+    let Title = `# ${answers.Title}\n`+ `[![License](https://img.shields.io/badge/License-${leanLicense}-yellow)]\n`;
     let Description = `## Description \n ${answers.Description}`;
 
     let TableofContentsformated = `- [Description](#Description)\n  - [TableofContents](#TableofContents)\n - [Installation](#Installation)\n - [Usage](#Usage)\n - [License](#Licens)\n - [Contributing](#Contributing)\n - [Tests](#Test)\n - [Questions](#Questions)`
@@ -134,14 +135,14 @@ console.log( '---------------------------------------------------------\n');
     let Installation = "## Installation\n ```sh\n"+string+"\n ``` ";
     let Usage = "## Usage\n ```sh\n"+string2+"\n ``` ";
     let Credits = `## Credits\n ${answers.Credits}`;
-    let badges = `![License](https://img.shields.io/badge/License-${leanLicense}-yellow)(https://opensource.org/licenses/${leanLicense}`
+    let Questions = `## Questions\n Follow this links and ask your questions to the Author: [${answers.Questions}](https://gist.github.com/${answers.Questions})\n Or send an email to: ${answers.email}`;
+    let badges = `![License](https://img.shields.io/github/license/${answers.Questions})(https://opensource.org/licenses)\n` + `![issues]https://img.shields.io/github/issues/${answers.Questions}\n`
     let Contribute = `${answers.Contribute}`;
     let Tests = `${answers.Tests}`;
-    let Questions = `## Questions\n Follow this links and ask your questions to the Author: [${answers.Questions}](https://gist.github.com/${answers.Questions})\n Or send an email to: ${answers.email}`;
+    
     var readmetext = `${Title}\n${Description}\n${TableofContents}\n${Installation}\n ${Usage}\n ${Credits}\n${License}\n## Badges\n![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)\n ${badges}\n ## Contribute ${Contribute}\n## Tests\n ${Tests} \n${Questions}`
     console.log(readmetext)
 
-  
     // writeFile function with filename, content and callback function
     fs.writeFile('README.md', readmetext, function (err) {
         if (err) throw err;
