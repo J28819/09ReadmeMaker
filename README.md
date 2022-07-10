@@ -1,8 +1,7 @@
 # 09Readmemaker
 
- [GNU General Public License v3.0](https://github.com/nvm-sh/nvm#important-notes)
+[![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
 
- # Node Version Manager [![Build Status](https://travis-ci.org/nvm-sh/nvm.svg?branch=master)][3] [![nvm version](https://img.shields.io/badge/version-v0.39.1-yellow.svg)][4] [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/684/badge)](https://bestpractices.coreinfrastructure.org/projects/684)
 ## Description 
  This App Create Readme Files
  ## Table of Contents
@@ -23,7 +22,15 @@
 - npm test
 
  ``` 
- ## Usage git clone, npm init, node index.js, npm test, end
+ ## Usage 
+ 
+  ```sh
+- git clone
+-  cd ~/.09Readmemaker
+- npm init
+-  node index.js
+- npm test
+
  ## Credits
  Ismael Leal
 # License 
