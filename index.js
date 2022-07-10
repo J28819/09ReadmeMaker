@@ -107,8 +107,11 @@ console.log( '---------------------------------------------------------\n');
  ];
  
  inquirer.prompt(questions).then((answers) => {
-    let License = `# License \n [![License](https://img.shields.io/badge/License-${answers.License}-yellow)](https://opensource.org/licenses/${answers.License})`;
-    let Title = `# ${answers.Title}\n`+ `![License](https://img.shields.io/badge/License-${answers.License}-yellow) ` + ` [badmath](https://img.shields.io/github/languages/top/lernantino/badmath)\n`;
+    let leanLicense = (answers.License).replace(' ', '%')
+    let License = `# License \n [![License](https://img.shields.io/badge/License-${leanLicense}-yellow)](https://opensource.org/licenses/${leanLicense})`;
+   
+    
+    let Title = `# ${answers.Title}\n`+ `![License](https://img.shields.io/badge/License-${leanLicense}-yellow)\n` + ` [badmath](https://img.shields.io/github/languages/top/lernantino/badmath)\n`;
     let Description = `## Description \n ${answers.Description}`;
 
     let TableofContentsformated = `- [Description](#Description)\n  - [TableofContents](#TableofContents)\n - [Installation](#Installation)\n - [Usage](#Usage)\n - [License](#Licens)\n - [Contributing](#Contributing)\n - [Tests](#Test)\n - [Questions](#Questions)`
@@ -131,7 +134,7 @@ console.log( '---------------------------------------------------------\n');
     let Installation = "## Installation\n ```sh\n"+string+"\n ``` ";
     let Usage = "## Usage\n ```sh\n"+string2+"\n ``` ";
     let Credits = `## Credits\n ${answers.Credits}`;
-    let badges = `![License](https://img.shields.io/badge/License-${answers.License}-yellow)(https://opensource.org/licenses/${answers.Licensee}`
+    let badges = `![License](https://img.shields.io/badge/License-${leanLicense}-yellow)(https://opensource.org/licenses/${leanLicense}`
     let Contribute = `${answers.Contribute}`;
     let Tests = `${answers.Tests}`;
     let Questions = `## Questions\n Follow this links and ask your questions to the Author: [${answers.Questions}](https://gist.github.com/${answers.Questions})\n Or send an email to: ${answers.email}`;
