@@ -114,11 +114,12 @@ console.log( '---------------------------------------------------------\n');
     let TableofContentsformated = `- [Description](#Description)\n  - [TableofContents](#TableofContents)\n - [Installation](#Installation)\n - [Usage](#Usage)\n - [License](#Licens)\n - [Contributing](#Contributing)\n - [Tests](#Test)\n - [Questions](#Questions)`
     let TableofContents = ` ## Table of Contents\n ${TableofContentsformated}`;
     let InstallationIns = (answers.Installation).split(',')
-    
-    installationins.forEach(element => {
+    var string = ""
+    InstallationIns.forEach(element => {
       console.log(element)
+      string += `- ${element}\n`
     });
-    let Installation = "## Installation\n ```sh" + ` ${InstallationIns} ` + " | bash  ```";
+    let Installation = "## Installation\n ```sh\n" + ` ${string} ` + " | bash  ```";
 
     let Usage = `## Usage ${answers.Usage}`;
     let Credits = `## Credits\n ${answers.Credits}`;
