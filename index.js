@@ -108,7 +108,7 @@ console.log( '---------------------------------------------------------\n');
  
  inquirer.prompt(questions).then((answers) => {
     let License = `# License \n [${answers.License}](https://github.com/nvm-sh/nvm#important-notes)`;
-    let Title = `# ${answers.Title}\n`+ "[![License](https://img.shields.io/badge/${License}%202.0-blue.svg)](https://opensource.org/licenses/${License}";
+    let Title = `# ${answers.Title}\n`+ `[![License](https://img.shields.io/badge/${License}%202.0-blue.svg)](https://opensource.org/licenses/${License}`;
     let Description = `## Description \n ${answers.Description}`;
 
     let TableofContentsformated = `- [Description](#Description)\n  - [TableofContents](#TableofContents)\n - [Installation](#Installation)\n - [Usage](#Usage)\n - [License](#Licens)\n - [Contributing](#Contributing)\n - [Tests](#Test)\n - [Questions](#Questions)`
@@ -119,12 +119,12 @@ console.log( '---------------------------------------------------------\n');
       console.log(element)
       string += `- ${element}\n`
     });
-    let Installation = "## Installation\n ```sh\n" + ` ${string} ` + " | bash  ```";
+    let Installation = "## Installation\n ```sh\n"+string+"\n ``` ";
 
     let Usage = `## Usage ${answers.Usage}`;
     let Credits = `## Credits\n ${answers.Credits}`;
     
-    let badges = "[![License](https://img.shields.io/badge/${License}%202.0-blue.svg)](https://opensource.org/licenses/${License}"
+    let badges = `[![License](https://img.shields.io/badge/${License}%202.0-blue.svg)](https://opensource.org/licenses/${License}`
    
     let Contribute = `${answers.Contribute}`;
     let Tests = `${answers.Tests}`;

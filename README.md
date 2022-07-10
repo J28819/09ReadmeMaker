@@ -1,7 +1,9 @@
-# 09ReadmeGen
-[![License](https://img.shields.io/badge/${License}%202.0-blue.svg)](https://opensource.org/licenses/${License}
+# 09Readmemaker
+[![License](https://img.shields.io/badge/# License 
+ [GNU General Public License v3.0](https://github.com/nvm-sh/nvm#important-notes)%202.0-blue.svg)](https://opensource.org/licenses/# License 
+ [GNU General Public License v3.0](https://github.com/nvm-sh/nvm#important-notes)
 ## Description 
- this app create ReadmeFiles
+ This App Create Readme Files
  ## Table of Contents
  - [Description](#Description)
   - [TableofContents](#TableofContents)
@@ -12,21 +14,25 @@
  - [Tests](#Test)
  - [Questions](#Questions)
 ## Installation
- ```sh - git clone
--  npm init
+ ```sh
+- git clone
+-  cd ~/.09Readmemaker
+- npm init
 -  node index.js
--  npm test
--  end
-  | bash  ```
+- npm test
+
+ ``` 
  ## Usage git clone, npm init, node index.js, npm test, end
  ## Credits
  Ismael Leal
 # License 
- [Apache License 2.0](https://github.com/nvm-sh/nvm#important-notes)
+ [GNU General Public License v3.0](https://github.com/nvm-sh/nvm#important-notes)
 ## Badges
 ![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
- [![License](https://img.shields.io/badge/${License}%202.0-blue.svg)](https://opensource.org/licenses/${License}
- ## Contribute No Contributions
+ [![License](https://img.shields.io/badge/# License 
+ [GNU General Public License v3.0](https://github.com/nvm-sh/nvm#important-notes)%202.0-blue.svg)](https://opensource.org/licenses/# License 
+ [GNU General Public License v3.0](https://github.com/nvm-sh/nvm#important-notes)
+ ## Contribute No Body
 ## Tests
  Jest 
 ## Questions
