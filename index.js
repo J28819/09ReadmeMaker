@@ -136,11 +136,11 @@ console.log( '---------------------------------------------------------\n');
     let Usage = "## Usage\n ```sh\n"+string2+"\n ``` ";
     let Credits = `## Credits\n ${answers.Credits}`;
     let Questions = `## Questions\n Follow this links and ask your questions to the Author: [${answers.Questions}](https://gist.github.com/${answers.Questions})\n Or send an email to: ${answers.email}`;
-    let badges = `![License](https://img.shields.io/github/license/${answers.Questions})(https://opensource.org/licenses)\n` + `![issues]https://img.shields.io/github/issues/${answers.Questions}\n`
+    let badges = `![License](https://img.shields.io/github/license/${answers.Questions})(https://opensource.org/licenses)\n`
     let Contribute = `${answers.Contribute}`;
     let Tests = `${answers.Tests}`;
     
-    var readmetext = `${Title}\n${Description}\n${TableofContents}\n${Installation}\n ${Usage}\n ${Credits}\n${License}\n## Badges\n![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)\n ${badges}\n ## Contribute ${Contribute}\n## Tests\n ${Tests} \n${Questions}`
+    var readmetext = `${Title}\n${Description}\n${TableofContents}\n${Installation}\n ${Usage}\n ${Credits}\n${answers.License}\n ${License}\n## Badges\n![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)\n ${badges}\n ## Contribute ${Contribute}\n## Tests\n ${Tests} \n${Questions}`
     console.log(readmetext)
 
     // writeFile function with filename, content and callback function
